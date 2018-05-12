@@ -1,0 +1,97 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <include file="Public/resultInfo"/>
+    <section class="table h45 history-table" data-type="pk10">
+        <table cellpadding="0" cellspacing="0" width="100%" id="table-pk10">
+            <tbody>
+            <tr>
+                <th width="20%">更新时间</th>
+                <th width="20%">期号</th>
+                <th class="tab-a" width="40%">
+                    <a href="javascript:;" class="active">显示号码</a>
+                </th>
+                <th width="20%">开奖时间</th>
+            </tr>
+            <foreach name="resultList" item="item">
+                <tr class="tr" id="tr-{$item['expect']}">
+                    <td class="time">
+                        <span>{$item.ctime|date="H:i:s",###}</span>
+                    </td>
+                    <td>
+                        {$item.expect}
+                    </td>
+                    <td class="td-num td-pk10">
+                        <div class="td-box cai-num size-32 center pk10-num" style="display: block;">
+                            <?php foreach(explode(',', $item['opencode']) as $value){ ?>
+                            <span class="n{$value}" data-num="{$value}">{$value}</span>
+                            <?php } ?>
+                        </div>
+
+                    </td>
+                    <td>
+                        {$item.opentimestamp|date="Y-m-d H:i:s",###}
+                    </td>
+                </tr>
+            </foreach>
+
+            </tbody>
+        </table>
+    </section>
+
+    <section class="lottery_list_info clearfix">
+        <foreach name="typeData" item="dataItem">
+            <notempty name="dataItem.data">
+                <div class="list_info_li">
+                    <div class="list_info_li_title">
+                        <h2>{$dataItem.title}</h2>
+                        <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/">更多&gt;&gt;</a>
+                    </div>
+                    <ul>
+                        <foreach name="dataItem.data" item="item">
+                            <li>
+                                <i></i>
+                                <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/{$item.id}.html"
+                                   title="{$item.title}">{$item.title|_substr=25,'...'}</a>
+                                <time>{$item.inputtime|date="Y-m-d",###}</time>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+            </notempty>
+        </foreach>
+    </section>
+    <script type="text/javascript" src="__PUBLIC__/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        var intDiff = parseInt({$resultInfo['other']['remainTime']});//倒计时总秒数量
+        function timer(intDiff) {
+
+            window.setInterval(function () {
+                var day = 0,
+                    hour = 0,
+                    minute = 0,
+                    second = 0;//时间默认值
+                if (intDiff > 0) {
+                    day = Math.floor(intDiff / (60 * 60 * 24));
+                    hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                    minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                    second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+                }
+                if (minute <= 9) minute = '0' + minute;
+                if (second <= 9) second = '0' + second;
+                $('.djs').html("<span>" + minute + "</span><em>分</em><span>" + second + "</span><em>秒</em>");
+                intDiff--;
+                if (0 == intDiff) {
+                    setTimeout(function () {
+                        window.location.reload();
+                        return false;
+                    }, 2000);
+
+                }
+            }, 1000);
+        }
+
+        $(function () {
+            timer(intDiff);
+        });
+    </script>
+</block>

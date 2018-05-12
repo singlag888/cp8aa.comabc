@@ -1,0 +1,54 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <section class="dangqian_wz">
+        <span>当前位置： <a href="#">首页</a>
+            &gt; <a href="/{$categoryInfo['url']}/">{$categoryInfo['catname']}</a> &gt;
+            <a id="urlmbx" href="/{$categoryInfo['url']}/{$typeInfo['pinyin']}/">{$typeInfo['title']}</a>
+        </span>
+    </section>
+    <section class="article_box clearfix">
+        <aside class="article_left">
+            <div class="article_cent">
+                <h1>{$Detail.title}</h1>
+                <span class="article_time">{$Detail.inputtime|date="Y-m-d H:i:s",###} 来源：网络</span>
+                <article>
+                    {$Detail.content}
+                </article>
+            </div>
+            <div class="xianguan_text">
+                <h6>相关文章阅读</h6>
+                <ul>
+                    <foreach name="dataInfo" item="item">
+                        <li>
+                            <i></i>
+                            <a href="/{$categoryInfo['url']}/{$typeInfo['pinyin']}/{$item.id}.html" title="{$item.title}">{$item.title|_substr=25,'...'}</a>
+                            <time>{$item.inputtime|date="Y-m-d",###}</time>
+                        </li>
+                    </foreach>
+                </ul>
+            </div>
+        </aside>
+        <!--右面-->
+        <aside class="article_right">
+            <foreach name="typeData" item="dataItem">
+                <notempty name="dataItem.data">
+                    <div class="lottcom_list">
+                        <div class="lottcom_darw_title">
+                            <h2>{$dataItem.title}</h2>
+                            <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/">更多&gt;&gt;</a>
+                        </div>
+                        <ul>
+                            <foreach name="dataItem.data" item="item">
+                                <li>
+                                    <i></i>
+                                    <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/{$item.id}.html" title="{$item.title}">{$item.title|_substr=25,'...'}</a>
+                                    <time>{$item.inputtime|date="Y-m-d",###}</time>
+                                </li>
+                            </foreach>
+                        </ul>
+                    </div>
+                </notempty>
+            </foreach>
+        </aside>
+    </section>
+</block>

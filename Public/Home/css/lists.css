@@ -1,0 +1,1894 @@
+/*public 公共部分*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details,
+figure, figcaption, footer, header,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+
+    /*vertical-align: baseline;*/
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+    background: #fff;
+}
+ol, ul, li {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+/*table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+/* add */
+body {font-size:12px;font-family:"microsoft yahei";}
+/*body,html{height:100%;}*/
+img{border:0}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+select,input{vertical-align:middle}
+.clear { display:block !important; clear:both !important; float:none !important; margin:0 !important; padding:0 !important; height:0; line-height:0; font-size:0; overflow:hidden;}
+.clearfix { zoom:1; }
+.clearfix:after { content:""; display:block; clear:both; height:0; }
+.spacer{clear:both; font-size:0; height:0; line-height:0;}
+a{color:#333;text-decoration:none}
+.square{
+    float:left;width:3px;height:3px;margin:5px 8px 0px 0px;background:#eee;
+}
+
+/*头部logo*/
+.docHead {
+    width: 1000px;
+    height: 92px;
+    margin: 0 auto;
+}
+.logo {
+    width: 205px;
+    height: 70px;
+    float: left;
+    margin-top:5px;
+}
+.logo>a{
+    display: block;
+}
+
+/*底部*************************************/
+.footer {
+    width: 1000px;
+    height:auto;
+    margin: 0 auto;
+    border: 1px solid #E5E5E5;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.footer_her {
+    height: 36px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.footer_her > h6 {
+    width: 92px;
+    height: 34px;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #E5E5E5;
+    border-top: 2px solid #f13131;
+    background: #ffffff;
+    line-height: 36px;
+    text-align: center;
+    color: #333;
+    font-family: "寰急闆呴粦";
+    font-size: 16px;
+}
+
+.friendLink {
+    height: 66px;
+    border-bottom: dashed 1px #E5E5E5;
+}
+
+.friendLink > span {
+    float: left;
+    color: #999;
+    font-family: "simsun";
+    font-size: 12px;
+    margin: 16px 20px 20px 14px;
+
+}
+
+.friendLink > ul > li {
+    font-family: "simsun";
+    font-size: 12px;
+    color: #999;
+    float: left;
+    margin: 14px 10px 0px 0px;
+}
+
+.friendLink > ul > li > a {
+    font-family: "simsun";
+    font-size: 12px;
+    color: #333;
+}
+
+.friendLink > ul > li > a:hover {
+    color: #F33131;
+}
+
+.copyright {
+    height: 100px;
+    text-align: center;
+}
+
+.copyright > p {
+    padding-top: 15px;
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #333;
+}
+
+.copyright > p > a {
+    font-family: "microsoft yahei";
+    font-size: 12px;
+    color: #333;
+    padding: 0px 20px 0px 20px;
+}
+.flot_min {
+    height: 50px;
+    border: none;
+    margin-top:0;
+}
+
+/*内容box**********************************/
+.docBody_max {
+    width: 1002px;
+    height: auto;
+    margin: 0 auto;
+}
+
+/*首页********************************/
+/*导航*/
+.doc_nav_box{
+    height:50px;background:#ff9834;
+}
+.doc_nav{
+    width:1000px;height:50px;margin:0 auto;
+}
+.doc_nav>a{
+    float:left;width: 110px;height:50px;font-size:18px;line-height: 50px;text-align: center;color:#fff;
+}
+.doc_nav>a:hover{
+    background:#ff7e00;
+}
+.doc_nav>a.hover{
+    background:#ff7e00;
+}
+/*彩种导航*/
+.lottery_nav{
+    width:1000px;height:160px;margin:0 auto;border-bottom: 2px solid #e5e5e5;
+}
+.lottery_nav>a{
+    float:left;margin:15px 0 0 15px;width:84px;height:auto;text-align: center;font-size:16px;line-height: 16px;color:#333;
+}
+.lottery_nav>a>img{
+    width:84px;height:84px;
+}
+.lottery_nav>a:first-child{
+    margin-left: 12px;
+}
+.lottery_nav>a>span{
+    display:inline-block;padding-top: 15px;
+}
+.lottery_nav>a:hover span{
+    color:#FF7E00;
+}
+/*开奖公告*/
+.draw_info_box{
+    width:1000px;height:auto;margin:0 auto;margin-top:25px;overflow: hidden;
+}
+.draw_box{
+    float:left;width:auto;height:375px;
+}
+.draw_box_title{
+    height:42px;border-bottom: 2px dashed #fecb94;
+}
+.draw_box_title>a{
+    float:right;font-family:simsun;font-size:14px;line-height:14px;color:#ff7e00;margin:20px 20px 0 0;
+}
+.draw_box_table{
+    margin-top:28px;height:auto;border: 1px solid #e5e5e5;padding-bottom: 21px;
+}
+.draw_box_table>table th{
+    background:#f3f3f3;height:28px;border-bottom: 1px solid #E5E5E5;color:#333;
+}
+.draw_box_table>table td{
+    height:24px;text-align: center;
+}
+.draw_box_table .table_name{
+    font-size:14px;font-family: simsun;color:#333;
+}
+.draw_box_table .table_name>a{
+    color:#333;
+}
+.draw_box_table .table_hao{
+    font-size:12px;font-family: arial;color:#333;
+}
+.boll_box{
+    height:22px;float: left;
+}
+.boll_box .boll_red{
+    float:left;width:22px;height:22px;background:#e62a2a;font:14px/22px arial;text-align: center;color:#fff;margin-right:3px;border-radius: 50%;
+}
+.boll_box .boll_bull{
+    float:left;width:22px;height:22px;background:#1479d7;font:14px/22px arial;text-align: center;color:#fff;margin-right:3px;border-radius: 50%;
+}
+/*热点资讯*/
+.info_box{
+    float:right;width:610px;height:auto;
+}
+.info_box_title{
+    height:42px;border-bottom: 2px dashed #fecb94;
+}
+.info_box_list{
+    margin-top:28px;height:auto;border: 1px solid #e5e5e5;
+}
+.info_box_list>li{
+    height:50px;border-bottom:1px dashed #E5E5E5;
+}
+.info_box_list>li:last-child{
+    border-bottom:none;
+}
+.info_box_list>li>span{
+    float:left;width:98px;font:14px/14px simsun;margin-top:25px;margin-left:14px ;color:#333;
+}
+.info_box_list>li>a{
+    float:left;max-width:450px;height:14px;font:14px/14px simsun;margin-top:25px;overflow: hidden;
+}
+.info_box_list>li>a:hover{
+    color:#E62A2A;text-decoration:underline;
+}
+/*彩票走势*/
+.lottery_trund{
+    width:1000px;height:auto;margin:28px auto 0;
+}
+.lottery_trund_title{
+    height:50px;border-bottom: 1px dashed #2eb670;
+}
+.lottery_trund_list{
+    height:auto;background:#f8f5ee;
+}
+.lottery_trund_list>li{
+    height:50px;border-bottom: 1px dashed #e6e6e6;
+}
+.lottery_trund_list>li>span{
+    float:left;width:86px;margin:24px 0 0 18px;font:14px/14px simsun;
+}
+.lottery_trund_list>li>div{
+    float:left;width:800px;height:14px;margin-top:24px;overflow: hidden;
+}
+.lottery_trund_list>li>div>a{
+    float:left;font:14px/14px simsun;color:#333;margin-right:10px;
+}
+.lottery_trund_list>li>div>a:hover{
+    color:#ff7e00;
+}
+.lottery_trund_list>li>i{
+    float:left;font:12px/12px simsun;color:#333;margin:26px 0 0 18px;
+}
+.lottery_trund_list>li>a{
+    float:left;font:14px/14px simsun;color:#FF7E00;margin:24px 0 0 20px;text-decoration: underline;
+}
+/*各彩种预测*/
+.lottery_list_info{
+    width:1000px;height:auto;margin:0 auto;
+}
+.list_info_li{
+    width:490px;height:auto;float:left;margin:35px 10px 0 0;
+}
+.list_info_li_title{
+    height:34px;border-bottom: 2px solid #e5e5e5;
+}
+.list_info_li_title>h2{
+    float:left;font-size:20px;color:#fe9829;font-weight: bold;line-height: 20px;
+}
+.list_info_li_title>a{
+    float:right;color:#ff7e00;font:14px/34px simsun;margin-right:20px;
+}
+.list_info_li>ul>li{
+    height:14px;margin-top:16px;
+}
+.list_info_li>ul>li>i{
+    float:left;width:3px;height:3px;background:#eee;margin:5px 8px 0 0;
+}
+.list_info_li>ul>li>a{
+    float:left;max-width:380px;height:14px;font:14px/14px simsun;color:#333;overflow: hidden;
+}
+.list_info_li>ul>li>a:hover{
+    color:#E62A2A;text-decoration: underline;
+}
+.list_info_li>ul>li>time{
+    float:right;font:12px/14px arial;color:#999;margin-right:16px;
+}
+
+/*当前位置*******************************/
+.dangqian_wz {
+    width: 1002px;height: 48px;margin: 0px auto;line-height: 48px;font-family: simsun;color: #333;
+}
+
+.dangqian_wz > span {
+    font-family: simsun;
+    color: #333;
+}
+
+.dangqian_wz > span > a {
+    font-family: simsun;
+    color: #333;
+    margin: 0px 10px 0px 2px;
+}
+/*新页面导航************************** */
+.lott_gongn_new_box{
+    width:100%;height:62px;/*position: fixed;left: 0;top: 0;z-index: 999;*/
+}
+.lott_gongn_new{
+    width:1000px;height:62px;margin:0 auto;border:1px solid #E5e5e5;background:#fff;border-bottom:2px solid #e5e5e5;
+}
+.lott_gongn_new>h2{
+    float:left;font:24px/62px "microsoft yahei";margin:0 36px 0 14px;
+}
+.lott_gongn_new>h2>a{
+    color: #ff9834;
+}
+.lott_gongn_new>ul{
+    float:left;
+}
+.lott_gongn_new>ul>li{
+    float:left;font:18px/62px "microsoft yahei";color:#666;margin-right:14px;position: relative;
+}
+.lott_gongn_new>ul>li>a{
+    font:18px/62px "microsoft yahei";color:#666;position: relative;padding-bottom: 17px;
+}
+.lott_gongn_new>ul>li>a:hover{
+    color:#F13031;border-bottom:2px solid #f13131;
+}
+
+/*专区页面内容********************************/
+.lottery_comtent{
+    width:1000px;height: auto;margin:0 auto;
+}
+.lottery_comtent_left{
+    float:left;width:490px;height: auto;
+}
+.lottery_comtent_right{
+    float:right;width:490px;height: auto;
+}
+.lottery_comtent_darw{
+    width:1000px;height: auto;margin:0 auto;
+}
+
+/*开奖公告*/
+.lottcom_darw{
+    width:490px;height:320px;margin:20px 0 0 0;
+}
+.lottcom_darw_title{
+    height:44px;border-bottom: 2px solid #ff7e01;box-sizing: border-box;background: url(../images/lottery_li_title.png) no-repeat;
+}
+.lottcom_darw_title>h2{
+    float:left;width:136px;height:44px;font-size:20px;color:#fff;line-height:44px;text-align:center;
+}
+.lottcom_darw_title>a{
+    float:right;font:14px/44px simsun;color:#ff7e00;margin-right:20px;
+}
+.lottcom_darw_li{
+    height: 40px;border-bottom: 1px dashed #e5e5e5;font:14px/40px simsun;color:#333;
+}
+.lottcom_darw_li select,option{
+    font-family: simsun;
+}
+.lottcom_darw_li strong{
+    color:#f13131;
+}
+.lottcom_darw_li span{
+    margin-left:20px;
+}
+.lottcom_darw_li .lott_boll_box{
+    float:left;margin-top:10px;
+}
+.lottcom_table_th{
+    height:26px;background:#e4faff;font:12px/26px simsun;color:#333;
+}
+.lottcom_table_com{
+    height:87px;background: #fff9f4;overflow-y: auto;
+}
+.lottcom_table_com tr{
+    height:26px;font: 12px/26px simsun;color: #333;text-align: center;margin-top:15px;
+}
+.lottcom_table_com tr strong{
+    font-family: arial;
+}
+/*文章推荐*/
+.lottcom_list{
+    width:490px;height:315px;margin:20px 0 0 0;overflow:hidden;
+}
+.lottcom_list:first-child{
+    margin:0;
+}
+.lottcom_list>ul>li {
+    height: 14px;
+    margin-top: 16px;
+}
+.lottcom_list>ul>li>i {
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 5px 8px 0 0;
+}
+.lottcom_list>ul>li>a {
+    float: left;
+    max-width: 380px;
+    height: 14px;
+    font: 14px/14px simsun;
+    color: #333;
+    overflow: hidden;
+}
+.lottcom_list>ul>li>time {
+    float: right;
+    font: 12px/14px arial;
+    color: #999;
+    margin-right: 16px;
+}
+.lottcom_list>ul>li>a:hover{
+    color:#E62A2A;text-decoration: underline;
+}
+/*选号器*/
+.lottcom_number_selector{
+    width:490px;height:320px;margin:20px 0 0 0;
+}
+.lottcom_selec_tab{
+    float:left;width:138px;height:276px;
+}
+.lottcom_selectab_1l{
+    width:138px;height:69px;
+}
+.lottcom_selectab_1l .xingzuo{
+    float:left;width:30px;height:30px;margin:18px 0px 0px 28px;background-position-x:0;
+}
+.lottcom_selectab_1l>span{
+    float:left;font-size:20px;color:#ff7e00;line-height: 69px;margin-left:15px;
+}
+.lottcom_selec_tab>li{
+    width:138px;height:69px;background: #e5e5e5;position: relative;
+}
+.lottcom_selec_tab>li:hover div{
+    display: block;
+}
+.lottcom_selec_tab>li>i{
+    float:left;width:30px;height:30px;margin:18px 0px 0px 28px;
+}
+.lottcom_selec_tab>li .xingming{
+    float:left;width:30px;height:30px;margin:18px 0px 0px 28px;background-position-x:-30px;
+}
+.lottcom_selec_tab>li .qq{
+    float:left;width:30px;height:30px;margin:18px 0px 0px 28px;background-position-x:-60px;
+}
+.lottcom_selec_tab>li .shengxiao{
+    float:left;width:30px;height:30px;margin:18px 0px 0px 28px;background-position-x:-90px;
+}
+.lottcom_selec_tab>li>span{
+    float:left;font-size:20px;color:#ff7e00;line-height: 69px;margin-left:15px;
+}
+.lottcom_selec_tab>li>div{
+    width:138px;height:69px;opacity:0.7;filter:alpha(opacity=70);display: none;
+}
+
+.lottcom_selec_comt{
+    float:right;width:320px;height:276px;
+}
+.lottcom_selec_xingz{
+    font-size:20px;line-height: 28px;color:#333;margin:30px 0 0 10px;
+}
+.lottcom_selec_xingz select{
+    width:108px;height:24px;font-size: 16px;color:#e82324;
+}
+.lottcom_selec_button{
+    width:210px;height: 54px;margin:26px auto;cursor:pointer;
+}
+.lottcom_selec_red{
+    height:58px;border-top:1px solid #e5e5e5;display: none;
+}
+.lottcom_selec_red>span{
+    float:left;font-size:20px;line-height: 58px;color:#333;margin:0 6px 0 15px;
+}
+.lottcom_selec_red>li{
+    float:left;width:34px;height:34px;background: #e62a2a;border-radius: 50%;font: 20px/34px arial;color:#fff;margin:12px 3px 0 0;text-align: center;
+}
+/*走势图li*/
+.lottcom_trend{
+    width:490px;height:auto;margin:20px 0 0 0;
+}
+.lottcom_trend_img{
+    height:146px;margin-top:16px;
+}
+.lottcom_trend_img>a{
+    float:left;width:146px;height:146px;margin-right:20px;
+}
+.lottcom_trend_img>a>li{
+    height:14px;margin:16px 0 0 0;
+}
+.lottcom_trend_img>a>li>span{
+    float:left;font: 14px/14px simsun;color: #333;
+}
+.lottcom_trend_img>a>li>i{
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 5px 8px 0 0;
+}
+.lottcom_trend_img img{
+    width:150px;height:115px;
+}
+.lottcom_trend_img>a:hover span{
+    color:#e62a2a;
+}
+.lottcom_trend_img>a:last-child{
+    margin-right:0;
+}
+.lottcom_trend>ul>li{
+    float:left;width:150px;height: 14px;margin-top: 16px;margin-right:13px;
+}
+.lottcom_trend>ul>li>i {
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 5px 8px 0 0;
+}
+.lottcom_trend>ul>li>a {
+    float: left;
+    max-width: 138px;
+    height: 14px;
+    font: 14px/14px simsun;
+    color: #333;
+    overflow: hidden;
+}
+.lottcom_trend>ul>li>a:hover{
+    text-decoration: underline;color:#e62a2a;
+}
+/*重庆时时彩专区*************************/
+.lottey_result_table{
+    width:1000px;
+    height: auto;
+    margin:20px auto 0;
+    border: 1px solid #E5E5E5;
+}
+.lottey_result_table>h1{
+    font:bold 16px/40px "microsoft yahei";color:#333;padding-left: 10px;border-bottom: 1px solid #e5e5e5;
+}
+.lottey_result_table table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.lottey_result_table table tbody tr th {
+    height: 30px;
+    border-right: 1px solid #e5e5e5;
+    font: 14px/30px simsun;
+    text-align: center;
+    color: #333;
+    box-sizing: border-box;
+    background: #f3f3f3;
+}
+.lottey_result_table table tbody tr td {
+    height: 30px;
+    border-right: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
+    font: 12px/30px simsun;
+    color: #333;
+    text-align: center;
+    box-sizing: border-box;
+}
+.lottey_result_table table tbody tr td span {
+    font-family: "arial";
+    color: #333;
+}
+.lottey_result_table table tbody tr td strong {
+    font-family: "arial";
+    color: #E62A2A;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 10px;
+}
+
+/*文章列表页********************************/
+.info_comtent{
+    width:1000px;height:auto;margin:0 auto;
+}
+.info_comtent_left{
+    float:left;width:490px;height:auto;border: 1px solid #e5e5e5;
+}
+.info_comtent_li>li{
+    height:38px;margin: 0 10px;border-bottom: 1px dashed #e5e5e5;
+}
+.info_comtent_li>li>i {
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 17px 8px 0 0;
+}
+.info_comtent_li>li>a {
+    float: left;
+    max-width: 380px;
+    height: 14px;
+    font: 14px/14px simsun;
+    color: #333;
+    overflow: hidden;
+    margin-top:12px;
+}
+.info_comtent_li>li>time {
+    float: right;
+    font: 12px/38px arial;
+    color: #999;
+}
+.info_comtent_li>li>a:hover{
+    color:#e62a2a
+}
+/*页数切换********************************/
+.zx_text_yeshu {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.zx_text_yeshu > ul {
+    float: right;
+    margin-top: 18px;
+    margin-right: 12px;
+}
+
+.zx_text_yeshu > ul > li {
+    float: left;
+}
+
+.zx_text_yeshu > ul > span {
+    max-width: 280px;
+    height: 30px;
+    float: left;
+    overflow: hidden;
+}
+
+.zx_text_yeshu > ul > span > li {
+    float: left;
+}
+
+.zx_text_yeshu > ul > li > a {
+    width: 32px;
+    height: 28px;
+    border-radius: 10%;
+    display: block;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    margin-left: 4px;
+}
+
+.zx_text_yeshu > ul > span > li > a {
+    width: 25px;
+    height: 28px;
+    border-radius: 10%;
+    display: block;
+    text-align: center;
+    line-height: 28px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ccc;
+    margin-left: 4px;
+}
+
+.zx_text_yeshu > ul > span > li > a.hover {
+    background: #f13031;
+    color: #fff;
+    border: 1px solid #f13031;
+}
+
+.zx_text_yeshu > ul > span > li > a:active {
+    background: #f13031;
+    color: #fff;
+    border: 1px solid #f13031;
+}
+.pagerdian{
+    color:#666;font-size: 14px;line-height:24px;padding: 0 2px;
+}
+/*总汇所有彩种的预测列表页******************/
+.infos_wz{
+    height:12px;line-height: 12px;margin-top:18px;
+}
+.infos_com {
+    width: 1000px;
+    height: auto;
+    margin: 0 auto;
+}
+.list_infos{
+    width:490px;height:auto;float:left;margin:35px 10px 0 0;
+}
+.list_infos_title{
+    height:30px;border-bottom: 2px solid #ff7e01;
+}
+.list_infos_title>h2{
+    float:left;font-size:20px;color:#333;font-weight: bold;line-height: 20px;
+}
+.list_infos_title>ul{
+    float:left;margin-left:34px;
+}
+.list_infos_title>ul>li{
+    float:left;width:72px;height:30px;text-align: center;
+}
+.list_infos_title>ul>li>a{
+    font:14px/30px simsun;color:#333;
+}
+.list_infos_title>ul>li>a:hover{
+    color:#ff9834;
+}
+.list_infos_title>a{
+    float:right;color:#666;font:14px/30px simsun;margin-right:16px;
+}
+.list_infos_li{
+    height: 210px;width:100%;overflow: hidden;
+}
+.list_infos_li>ul>li{
+    height:14px;margin-top:16px;
+}
+.list_infos_li>ul>li>i{
+    float:left;width:3px;height:3px;background:#eee;margin:5px 8px 0 0;
+}
+.list_infos_li>ul>li>a{
+    float:left;max-width:380px;height:14px;font:14px/14px simsun;color:#333;overflow: hidden;
+}
+.list_infos_li>ul>li>a:hover{
+    color:#E62A2A;text-decoration: underline;
+}
+.list_infos_li>ul>li>time{
+    float:right;font:12px/14px arial;color:#999;margin-right:16px;
+}
+
+/*历史开奖页面*****************************/
+.history_com{
+    width:1000px;height: auto;margin: 0 auto;
+}
+.history_draw{
+    height:120px;padding-top:27px;
+}
+.history_draw_logo{
+    width:120px;height:120px;float:left;margin:0 34px 0 20px;
+}
+.history_draw_logo>img{
+    width:120px;height:120px;
+}
+.history_draw_titl{
+    width:810px;height:120px;float:left;
+}
+.history_draw_1l{
+    height:18px;font:14px/14px simsun;color:#333;
+}
+.history_draw_1l strong{
+    font-family: arial;
+}
+.history_draw_1l select{
+    height:18px;
+}
+.history_draw_2l{
+    height:40px;margin-top:20px;
+}
+.history_draw_2l>li{
+    font:24px/40px arial;text-align: center;width:40px;height:40px;border-radius:50%;float:left;margin-right:8px;color:#fff;
+}
+.history_draw_2l .boll_red{
+    background:#e62a2a;
+}
+.history_draw_2l .boll_bull{
+    background:#1479d7;
+}
+.history_draw_2l>a{
+    font-size:16px;color:#ff7e00;line-height: 40px;text-decoration: underline;float:right;margin-left:20px;
+}
+.history_draw_3l{
+    height:16px;margin-top:22px;font-size:16px;line-height: 16px;color:#333;
+}
+.history_draw_3l strong{
+    color:#f13131;
+}
+.history_jiangx{
+    width:1000px;height:113px;margin:22px auto 0;
+}
+.history_table_th{
+    height: 26px;
+    background: #e4faff;
+    font: 14px/26px simsun;
+    color: #333;
+}
+.history_table_com {
+    height: 87px;
+    background: #fff9f4;
+    overflow-y: auto;
+}
+.history_table_com tr {
+    height: 26px;
+    font: 14px/26px simsun;
+    color: #333;
+    text-align: center;
+    margin-top: 15px;
+}
+.history_table_com strong{
+    color:#f13131;font-family: arial;
+}
+.history_table{
+    width:1000px;height:auto;margin:20px auto 0;border:1px solid #e5e5e5;
+}
+.history_table>h1{
+    height:40px;font-size:20px;color:#F08200;line-height: 40px;padding-left: 10px;
+}
+.history_table > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.history_table > table tr th {
+    background: #f5f5f5;
+    text-align: center;
+    border-top: 1px solid #E5E5E5;
+    font-family: "microsoft yahei";
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+}
+.history_table > table tr td {
+    height: 36px;
+    border-top: 1px solid #E5E5E5;
+    text-align: center;
+    font-family: "arial";
+    vertical-align: middle;
+    font-size: 14px;
+    color: #666;
+    overflow: hidden;
+}
+/*走势列表*/
+.history_trend{
+    width:1000px;height: auto;margin: 20px auto 0;border: 1px solid #e5e5e5;padding-bottom: 20px;
+}
+.history_trend>h1 {
+    height: 40px;
+    font-size: 20px;
+    color: #F08200;
+    line-height: 40px;
+    padding-left: 10px;
+    border-bottom: 1px solid #E5E5E5;
+
+}
+.history_trend>ul>li {
+    float: left;
+    width: 150px;
+    height: 14px;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.history_trend>ul>li>i {
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 5px 8px 0 0;
+}
+.history_trend>ul>li>a {
+    float: left;
+    max-width: 138px;
+    height: 14px;
+    font: 14px/14px simsun;
+    color: #333;
+    overflow: hidden;
+}
+.history_trend>ul>li>a:hover{
+    color:#F13031;
+}
+
+/*重庆时时彩历史开奖****************/
+.kaitab_nav {
+    height: 38px;
+    border-bottom:1px solid #E5E5E5;
+}
+.kaitab_nav>h2 {
+    font: 16px/38px "microsoft yahei";
+    float: left;
+    margin-left: 14px;
+}
+.kaitab_nav>ul {
+    float: left;
+    margin-left: 32px;
+}
+.kaitab_nav>ul>span{
+    float:left;font:14px/38px simsun;color:#333;
+}
+.kaitab_nav>ul>li {
+    float: left;
+    margin-right: 8px;
+    margin-top: 8px;
+    position: relative;
+}
+.kaitab_nav>ul>li>a {
+    display: block;
+    width: 42px;
+    height: 20px;
+    font: 14px/20px simsun;
+    color: #333;
+    text-align: center;
+}
+.kaitab_nav>ul>li>a.hover {
+    background: #ff9834;
+    color: #fff;
+}
+.kaitab_nav>div {
+    float: left;
+    width: 200px;
+    margin-left: 52px;
+    margin-top: 8px;
+}
+.kaitab_nav>div>label {
+    font: 14px/14px simsun;
+    color: #333;
+    float: left;
+    margin-top: 4px;
+}
+.kaitab_nav .qihao_chaxun {
+    width: 92px;
+    height: 24px;
+    border: 1px solid #e5e5e5;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    float: left;
+    color: #333;
+}
+
+/*走势图列表页*****************************/
+.fucai_trend{
+    width:1000px;height:auto;margin:0 auto;border: 1px solid #E5E5E5;
+}
+.fucai_lottery_list{
+    height:auto;border-bottom:1px dashed #E5E5E5;
+}
+.fucai_lottery_list .fc_list_logo{
+    width:125px;float:left;text-align: center;
+}
+.fucai_lottery_list .fc_list_logo>img{
+    width:90px;height:90px;margin-top:30px;
+}
+.fucai_lottery_list .fc_list_logo>span{
+    display:inline-block;width:100%;margin-top:14px;font:bold 16px/16px "microsoft yahei"; color:#ff7e00;padding-bottom: 18px;
+}
+.fucai_trends_right{
+    float:right;width:754px;margin-right:56px;
+}
+.fucai_trends_right>h3{
+    font-size: 16px;line-height: 16px;float:left;color:#333;margin-top:12px;
+}
+.fucai_trends_right>ul{
+    float:right;width:644px;padding:0 0 12px 0;
+}
+.fucai_trends_right>ul>li{
+    float:left;margin:14px 0 0 15px;
+}
+.fucai_trends_right>ul>li>a{
+    font:12px/12px simsun; color:#333;
+}
+.fucai_trends_right>ul>li>a:hover{
+    color:#F13131;text-decoration: underline;
+}
+/*开奖公告************************/
+.time_kaij{
+    width:1000px;height:auto;margin:0 auto;border: 1px solid #E5E5E5;
+}
+.time_kaij>h1 {
+    height: 40px;
+    font-size: 20px;
+    color: #F08200;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.time_kaij>div{
+    height:40px;background:#f5f5f5;border-top:1px solid #E5E5E5;
+}
+.time_kaij>div>a{
+    float:left;font:14px/40px simsun;color:#333;margin-left:20px;
+}
+.draw_notic_table {
+    width: 1000px;
+    height: auto;
+    margin: 20px auto 0;
+    border: 1px solid #e5e5e5;
+}
+.draw_notic_table>h1 {
+    height: 40px;
+    font-size: 20px;
+    color: #F08200;
+    line-height: 40px;
+    padding-left: 10px;
+}
+.draw_notic_table > table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.draw_notic_table > table tr th {
+    text-align: center;
+    border-top: 1px solid #E5E5E5;
+    font-family:simsun;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+}
+.draw_notic_table > table tr td {
+    height: 36px;
+    border-top: 1px solid #E5E5E5;
+    text-align: center;
+    font-family:simsun;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+}
+.draw_notic_table strong{
+    font-family: arial;
+}
+.draw_notic_table .notic_xq{
+    display: inline-block;width:20px;height:20px;background-position-x: -20px;
+}
+.draw_notic_table .notic_zs{
+    display: inline-block;width:20px;height:20px;background-position-x: 0px;
+}
+.draw_notic_table .notic_cz{
+    display: inline-block;width:20px;height:20px;background-position-x: -40px;
+}
+.draw_notic_table .notic_boll>li{
+    font-family: arial;font-size: 14px;font-weight: bold;margin-right: 4px;
+}
+
+/*文章页******************************/
+.article_box{
+    width:1000px;height:auto;margin:0 auto;
+}
+.article_left{
+    width:600px;height:auto;float:left;
+}
+.article_cent{
+    border: 1px solid #e5e5e5;padding-bottom: 20px;
+}
+.article_cent > h1 {
+    font-size: 24px;line-height: 24px;color: #333;text-align: center;margin-top:20px;
+}
+.article_cent .article_time{
+    display: block;font-size: 12px;line-height: 12px;color:#999;text-align: center;margin-top:20px;
+}
+.article_cent div {
+    font-family: simsun;
+    font-size: 16px;
+    color: #333;
+    line-height: 24px;
+    letter-spacing: 0.4px;
+    margin-top: 15px;
+}
+.article_cent p {
+    text-indent: 2em; text-align: left;font-family: simsun;font-size: 16px;color: #333;line-height: 24px;letter-spacing: 0.4px; margin-top: 15px; padding: 0 10px;
+}
+.xianguan_text {
+    border-top: 1px solid #E5E5E5;margin-top: 20px;
+}
+.xianguan_text > h6 {
+    font-family: simsun;font-size: 14px;color: #333;font-weight: bold; margin-top:20px;
+}
+.xianguan_text > ul > li {
+    margin-top: 13px;
+}
+.xianguan_text > ul > li > a {
+    display: inline-block;max-width: 400px;height: 14px;overflow: hidden;font-family: simsun;font-size: 14px;color: #333;
+}
+.xianguan_text > ul > li > time {
+    font-family: simsun;font-size: 14px;color: #999;float: right; margin-right: 20px;
+}
+.xianguan_text > ul > li > a:hover{
+    color:#F13031;text-decoration: underline;
+}
+/*右面*/
+.article_right{
+    width:380px;height:auto;float:right;
+}
+.lottcom_trend {
+    height: auto;
+}
+.article_trend_img {
+    height: 160px;margin-top: 18px;
+}
+.article_trend_img>a{
+    float: left;width: 180px;height: 160px;margin-right: 10px;
+}
+.article_trend_img>a>li{
+    height:14px;margin:16px 0 0 0;
+}
+.article_trend_img>a>li>span{
+    float:left;font: 14px/14px simsun;color: #333;
+}
+.article_trend_img>a>li>i{
+    float: left;
+    width: 3px;
+    height: 3px;
+    background: #eee;
+    margin: 5px 8px 0 0;
+}
+.article_trend_img>a:hover span{
+    color:#e62a2a;
+}
+.article_trend_img img {
+    width: 180px;height: 130px;
+}
+.article_trend>ul>li {
+    float: left;width: 150px;height: 14px; margin-top: 16px;margin-right: 40px;
+}
+.article_trend>ul>li>i {
+    float: left;width: 3px;height: 3px;background: #eee;margin: 5px 8px 0 0;
+}
+.article_trend>ul>li>a {
+    float: left;max-width: 138px;height: 14px;font: 14px/14px simsun;color: #333;overflow: hidden;
+}
+.article_trend>ul>li>a:hover{
+    color:#F13031;
+}
+.article_list {
+    height: auto;
+    margin: 20px 0 0 0;
+}
+.article_list:first-child{
+    margin: 0;
+}
+.article_list>ul>li {
+    height: 14px;margin-top: 16px;
+}
+.article_list>ul>li>i {
+    float: left;width: 3px;height: 3px; background: #eee;margin: 5px 8px 0 0;
+}
+.article_list>ul>li>a {
+    float: left;max-width: 360px;height: 14px;font: 14px/14px simsun;color: #333;overflow: hidden;
+}
+.article_list>ul>li>a:hover{
+    color:#F13031;text-decoration: underline;
+}
+
+/*新手专区**********************/
+.xs_conert{
+    width: 1002px;height: auto;margin: 0 auto;border:1px solid #E5E5E5;
+}
+.xs_conert_left{
+    float:left;width:190px;height:100%;background:#f5f5f5;border-right:1px solid #E5E5E5;
+}
+.xs_conert_left>ul>li{
+    width:100%;height:34px;border-left:6px solid #f5f5f5;box-sizing: border-box;
+}
+.xs_conert_left>ul>li>a{
+    width:154px;height:34px;float:left;margin-left:12px;border-bottom:1px solid #E5E5E5;font:14px/34px simsun;color:#333;text-align: center; box-sizing: border-box;
+}
+.xs_conert_left>ul>li>i{
+    float:left;width:8px;height:8px;border-top:1px solid #f5f5f5;border-right:1px solid #f5f5f5;transform:rotate(45deg);margin:12px 0 0 4px;
+}
+.xs_conert_left>ul>li>a:hover{
+    cursor: pointer;text-decoration: underline;
+}
+.xs_conert_left>ul>li:hover{
+    background:#fff;border-left:6px solid #F13031;
+}
+.xs_conert_left>ul>li:hover>a{
+    color:#F13031;border-bottom:1px solid #fff;text-decoration: none;
+}
+.xs_conert_left>ul>li:hover>i{
+    border-color:#F13031;
+}
+
+.xs_conert_right{
+    width:769px;height:auto;float:left;margin-left: 20px;
+}
+.xs_conrigh_guize{
+    width:100%;height:113px;margin-top:20px;
+}
+.xs_conrige_title{
+    width:100%;height:21px;
+}
+.xs_conrige_title>h2{
+    float:left;padding-left: 8px;border-left:3px solid #F13031;font:16px/16px "microsoft yahei";
+}
+.xs_conrige_title>i{
+    float:left;width:687px;border-top:1px solid #E5E5E5;margin:5px 0 0 6px;
+}
+.xs_conrigh_guize>ul>li{
+    float:left;width:140px;margin:15px 30px 0 0;
+}
+.xs_conrigh_guize>ul>li>i{
+    float:left;width:3px;height:3px;background:#eee;margin:5px 8px 0 0;
+}
+.xs_conrigh_guize>ul>li>a{
+    font:14px/14px simsun;float:left;
+}
+.xs_conrigh_guize>ul>li>a:hover{
+    color:#f13131;text-decoration: underline;
+}
+
+/*新手专区导航*/
+.guides_nav{
+    width:100%;height:30px;margin-top:11px;border-bottom:1px solid #e5e5e5;
+}
+.guides_nav>ul{
+    margin-left:12px;
+}
+
+.guides_nav>ul>li{
+    float:left;width:90px;height:28px;
+}
+.guides_nav>ul>li>a{
+    float:left;width:90px;height:28px;border-top:2px solid #fff;text-align: center;font:14px/28px simsun;color:#333;
+}
+.guides_nav>ul>li a:hover{
+    color:#F13031;
+}
+.guides_nav>ul>li a.hover{
+    border-top:2px solid #F13031;color:#F13031;font-weight: bold;border-bottom: 1px solid #fff;
+}
+
+/*玩法规则*/
+.guides_wfgz{
+    width:100%;height:auto;
+}
+.guides_wfgz>h2{
+    font:bold 16px/16px simsun;color:#333;padding-top:24px;
+}
+.guides_wfgz>h3{
+    font:bold 14px/14px simsun;color:#333;padding-top:20px;
+}
+.guides_wfgz>p{
+    font:14px/28px simsun;color:#333;padding-top:8px;
+}
+/*常见问题*/
+.guides_cjwt>ul{
+    padding-top:11px;
+}
+.guides_cjwt>ul>li{
+    width:100%;height:14px;margin-top:15px;
+}
+.guides_cjwt>ul>li>i{
+    float:left;width:3px;height:3px;background:#eeeeee;margin:6px 8px 0 0;
+}
+.guides_cjwt>ul>li>a{
+    float:left;font:14px/14px simsun;color:#333;max-width:670px;height:14px;overflow: hidden;
+}
+.guides_cjwt>ul>li>a:hover{
+    color:#F13031;text-decoration: underline;
+}
+.guides_cjwt>ul>li>span{
+    float:right;font:12px/14px arial;color:#999;
+}
+/*新手文章*/
+.guides_wenti{
+    font:14px/14px simsun;color:#333;margin-top:15px;
+}
+.guides_wenti>a:hover{
+    color:#F13031;text-decoration: underline;
+}
+.guides_top{
+    font:bold 14px/14px simsun;color:#333;margin-top:46px;
+}
+.guides_top>a{
+    font:14px/14px simsun;color:#333;
+}
+.guides_top>a:hover{
+    color:#F13031;text-decoration: underline;
+}
+.guides_bottom{
+    font:bold 14px/14px simsun;color:#333;margin-top:16px;
+}
+.guides_bottom>a{
+    font:14px/14px simsun;color:#333;
+}
+.guides_bottom>a:hover{
+    color:#F13031;text-decoration: underline;
+}
+/* 竞猜页面比分直播页****************************** */
+.football_comtent{
+    width:1000px;height:auto;margin:6px auto 0;border-left: 1px solid #C9E1F0;border-right: 1px solid #C9E1F0;
+}
+.football_comtent>table{
+    width: 1000px;
+    border-collapse: collapse;
+}
+.football_comtent>table tr>th{
+    height:30px;border: 1px solid #C9E1F0;text-align:center;vertical-align:middle;background:#e8f6ff;font:12px/30px simsun;color:#777;    border-left: none;
+}
+.football_comtent>table tr>td{
+    height:30px;border-bottom: 1px solid #C9E1F0;text-align:center;vertical-align:middle;font-family:simsun;font-size: 12px;
+}
+.football_comtent>table tr:nth-child(odd){background-color:#f6f6f6;}
+.football_comtent>table tr:nth-child(even){background-color:#fff;}
+.footable_title_time{
+    font:bold 14px/30px simsun;color:#333;float:left;margin-left:4px;
+}
+.footable_zhu_pm{
+    color:#9a9a9a;margin-right:14px;
+}
+.footable_fu_pm{
+    color:#9a9a9a;margin-left:14px;
+}
+.footable_ps_zhi>span{
+    margin-left:30px;
+}
+/*胜负按钮*/
+.caigbox{
+    z-index: 95;
+    width: 50px;
+    height: 24px;
+    margin: 0 auto;
+    position: relative;
+}
+.caigbox a.caigbtn{
+    display: block;
+    width: 50px;
+    height: 23px;
+    line-height: 23px;
+    line-height: 26px\0/;
+    border: 1px solid #C3C3C3;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    position: relative;
+    text-align: left;
+    text-indent: 10px;
+}
+.caigbtn .smallarrow_icon{
+    display: block;
+    width: 5px;
+    height: 3px;
+    overflow: hidden;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.caigbtn .up{
+    background-position: -112px 0;
+}
+.caigbtn .down{
+    background-position: -104px 0;
+}
+.caiglist {
+    width: 50px;
+    height: auto;
+    top: 25px;
+    position: absolute;
+    left: 0px;
+    z-index: 99;
+    overflow: hidden;
+    border: 1px solid #CBCBCB;
+    box-shadow: 1px 2px 2px #ccc;
+    -moz-box-shadow: 1px 2px 2px #ccc;
+    -webkit-box-shadow: 1px 2px 2px #ccc;
+    background-color: #fff;
+}
+.caiglist a {
+    display: block;
+    float: left;
+    width: 100%;
+    height: 22px;
+    line-height: 22px;
+    background-color: #fff;
+    text-align: left;
+    text-indent: 10px;
+}
+.caiglist a.xz {
+    background-color: #7FCEFF;
+    color: #333;
+}
+.drawhan{
+    display: none;
+}
+
+/*竞猜说明*/
+.livescore_text {
+    clear: both;
+    width:1000px;margin:20px auto 0;
+    padding: 10px 0px 2px 0px;
+    background-color: #F6FAFF;
+    text-align: left;
+    overflow: hidden;
+}
+.float_l {
+    float: left;width:500px;margin-left:15px;
+}
+.livescore_text p {
+    height: 18px;
+    line-height: 18px;
+    padding: 0px 0px 5px 0px;
+}
+.blueblock {
+    background-color: #3C64DB;
+    color: #fff;
+}
+.yellowblock {
+    background-color: #D8CB29;
+    color: #fff;
+}
+.redblock {
+    background-color: #ED5427;
+    color: #fff;
+}
+.livescore_text .float_l span {
+    padding: 2px 5px;
+    margin: 0px 5px 0px;
+}
+.float_r {
+    float: right;width:387px;
+}
+.jinqiu, .wulong, .dianqiu, .rypai, .redpai, .yellowpai, .huanren {
+    display: inline-block;
+}
+.livescore_text .float_r img, .livescore_text .float_r span, .livescore_text .float_r em {
+    float: left;
+    line-height: 18px;
+}
+.jinqiu {
+    width: 17px;
+    height: 17px;
+    background-position: 0 0;
+}
+.wulong {
+    width: 16px;
+    height: 16px;
+    background-position: 0 -26px;
+}
+.redpai {
+    width: 12px;
+    height: 16px;
+    background-position: 0 -111px;
+}
+
+/*竞猜开奖公告----------------*/
+.football_history_comtent{
+    width:1000px;height:auto;margin:0 auto;
+}
+.ybtn79{
+    width:70px;height:24px;color: #ae0101;border:1px solid #fdc856;font:12px simmun;background:#fee891;
+}
+.float_2{
+    float:left;
+}
+.float_rr {
+    float: right;line-height: 24px;
+}
+.redtxt {
+    color: #AE0101;
+}
+.tableborder {
+    border-collapse: collapse;
+    border: 1px solid #8BC1E7;
+    margin: 15px 0px 0px 0px;
+}
+.tableborder th, .tableborder td {
+    padding: 1px 0px;
+}
+.tableborder02 th {
+    border-left: 1px solid #8BC1E7;
+}
+.tableborder th {
+    background-color: #C2E8FF;
+    border-bottom: 1px solid #8BC1E7;
+    padding: 6px 0px;
+    text-align: center;
+    font-size: 12px;
+}
+.tableborder02 td {
+    border-left: 1px solid #D1E5FE;
+}
+.tableborder td {
+    border-top: 1px solid #D1E5FE;
+    padding: 4px 0px;
+}
+.namebox {
+    height: 22px;
+    line-height: 22px;
+    width: 100%;
+    float: left;
+    overflow: hidden;
+}
+.link_blue {
+    color: #004B91;
+}
+.font_red {
+    color: #f46859!important;
+}
+/*取消谷歌自带的input属性*/
+/*:focus {outline: none} */
+
+/*404页面和500页面**************************/
+.server-404{
+    width:575px;
+    height:240px;
+    margin:0 auto;
+}
+.people-img{
+    float:left;
+    margin-top:68px;
+}
+.message{
+    float:left;
+    margin-top:74px;
+    margin-left:18px;
+}
+.message>p{
+    font-family: "simsun";
+    font-size:12px;
+    color:#999;
+    margin-top:12px;
+}
+.message>span{
+    display: block;
+    margin-top:12px;
+}
+.message>span>a{
+    font-family: "simsun";
+    font-size:12px;
+    color:#0065ba;
+    margin-right:12px;
+}
+.server-500{
+    width:520px;
+    height:240px;
+    margin:0 auto;
+}
+/*lottery-card*/
+.lottery-card *{
+    font-size:14px;
+    color: #666;
+}
+.lottery-card{
+    width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    margin-bottom: 10px;
+    border: 1px solid #dfdfdf;
+    overflow: hidden;
+    height: 190px;
+    transition: all ease-out .2s;
+    -moz-transition: all ease-out .2s;
+    -webkit-transition: all ease-out .2s;
+    -o-transition: all ease-out .2s;
+}
+.lottery-card .img {
+    width: 140px;
+    float: left;
+    text-align: center;
+    padding: 15px 0;
+    height: 160px;
+    border-right: 1px solid #dfdfdf;
+}
+.lottery-card .img span {
+    display: block;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.lottery-card .img p {
+    margin: 8px auto;
+    color: #333;
+    font-size: 16px;
+    height: 25px;
+    line-height: 25px;
+    width: 90%;
+    overflow: hidden;
+}
+.lottery-card .img a {
+    display: inline-block;
+    width: 88px;
+    height: 33px;
+    line-height: 33px;
+    color: #333;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+}
+.lottery-card .txt {
+    width: 515px;
+    float: left;
+    padding: 20px;
+}
+.lottery-card .txt p {
+    font-size: 18px;
+    color: #333;
+    overflow: hidden;
+    line-height: 23px;
+    height: 23px;
+}
+.lottery-card .txt .current{
+    font-size: 18px !important;
+}
+.lottery-card .txt p span.cpicon {
+    display: inline-block;
+    margin-right: 5px;
+    float: left;
+    color: #e73f3f;
+    font-size: 20px;
+    line-height: 23px;
+}
+.lottery-card .txt .cai-num {
+    border: 1px solid #e5e5e5;
+    margin: 14px 0;
+    background: #fafafa;
+    border-radius: 3px;
+    padding: 13px;
+    height: 38px;
+}
+.lottery-card .txt .star {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    vertical-align: middle;
+    margin-top: -7px;
+}
+
+.clearfix {
+    zoom: 1;
+}
+.lottery-card .txt .clearfix a {
+    display: inline-block;
+    width: 88px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #fafafa;
+    border: 1px solid #e5e5e5;
+    float: left;
+    margin-right: 10px;
+    color: #333;
+}
+.lottery-card .txt .clearfix a.active {
+    background: #fff7f7;
+    border-color: #ffabab;
+    color: #e73f3f;
+}
+.lottery-card .txt .clearfix a:hover {
+    background: #e73f3f;
+    color: #fff;
+    border-color: #e73f3f;
+}
+.lottery-card .rule .open-video:hover span {
+    background: #e73f3f;
+    color: #fff;
+}
+.lottery-card .img a:hover {
+    background: #e73f3f;
+    color: #fff;
+    border-color: #e73f3f;
+}
+a.custom, a.custom:hover {
+    background: #e73f3f!important;
+    border-color: #e73f3f!important;
+    color: #fff!important;
+}
+.lottery-card .rule {
+    width: 280px;
+    float: right;
+    padding: 20px 20px 20px 0;
+}
+.lottery-card .rule .open-time {
+    float: left;
+    padding: 8px 0;
+    line-height:1.6;
+}
+.lottery-card .rule .open-video {
+    float: right;
+    width: 110px;
+    height: 150px;
+    position: relative;
+}
+.djs {
+    padding: 18px 0;
+    overflow: hidden;
+    line-height: 35px;
+}
+.djs span {
+    display: inline-block;
+    height: 35px;
+    float: left;
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    background: #e73f3f;
+    border-radius: 3px;
+    width: 40px;
+    text-align: center
+}
+
+.djs em {
+    display: inline-block;
+    float: left;
+    padding: 0 6px
+}
+.lottery-card .rule .open-video {
+    float: right;
+    width: 110px;
+    height: 150px;
+    position: relative;
+}
+.lottery-card .rule .open-video span {
+    display: block;
+    background: #e5e5e5;
+    color: #333;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    transition: all ease-out .3s;
+    -moz-transition: all ease-out .3s;
+    -webkit-transition: all ease-out .3s;
+    -o-transition: all ease-out .3s;
+}
+.lottery-card .rule .open-video a {
+    display: block;
+    width: 110px;
+    height: 110px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    text-align: center;
+}
+.lottery-card .rule .open-video a img {
+    display: inline-block;
+    margin-top: 22px;
+}
+.cai-num span {
+    width: 38px;
+    height: 38px;
+    float: left;
+    margin-right: 5px;
+    text-align: center;
+    border-radius: 50%;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 700;
+    background: #3771de;
+}
+.cai-num, .cai-num span {
+    line-height: 38px;
+    overflow: hidden;
+}
+.cai-num.jsft-num span, .cai-num.jspk10-num span, .cai-num.pk10-num span, .cai-num.speed10-num span, .cai-num.xyft-num span {
+    border-radius: 3px;
+    text-shadow: 0 0 1px #000;
+}
+.n1,.n11,.n21,.n31,.n41,.n51,.n61,.n71,.n81,.n91{
+    background: #e7df00 !important;
+}
+.n2,.n12,.n22,.n32,.n42,.n52,.n62,.n72,.n82,.n92{
+    background: #0093dd !important;
+}
+.n3,.n13,.n23,.n33,.n43,.n53,.n63,.n73,.n83,.n93{
+    background: #4a4a4a !important;
+}
+.n4,.n14,.n24,.n34,.n44,.n54,.n64,.n74,.n84,.n94{
+    background: #ff7600 !important;
+}
+.n5,.n15,.n25,.n35,.n45,.n55,.n65,.n75,.n85,.n95{
+    background: #16e3e5 !important;
+}
+.n6,.n16,.n26,.n36,.n46,.n56,.n66,.n76,.n86,.n96{
+    background: #5234ff !important;
+}
+.n7,.n17,.n27,.n37,.n47,.n57,.n67,.n77,.n87,.n97{
+    background: #bfbfbf !important;
+}
+.n8,.n18,.n28,.n38,.n48,.n58,.n68,.n78,.n88,.n98{
+    background: #ff2600 !important;
+}
+.n9,.n19,.n29,.n39,.n49,.n59,.n69,.n79,.n89,.n99{
+    background: #780a00 !important;
+}
+.n10,.n20,.n30,.n40,.n50,.n60,.n70,.n80,.n90,.n100{
+    background: #06bf00 !important;
+}
+.history-table{
+    width:1000px;
+    margin: 0 auto;
+}
+.table table {
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.table.h45 td, .table.h45 th {
+    height: 45px;
+    line-height: 45px;
+}
+.table table th {
+    background: #f9f9f9;
+}
+td, th {
+    display: table-cell;
+    vertical-align: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.table.history-table td {
+    font-size: 13px;
+}
+.table table td, .table table th {
+    line-height: 36px;
+    text-align: center;
+    border: 1px solid #e5e5e5;
+}
+.table .cai-num.center {
+    padding-left: 0;
+}
+.cai-num.size-32 {
+    line-height: 32px;
+    width:370px;
+    margin: 0 auto;
+}
+.cai-num.size-32 span {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 16px;
+}
+.table .cai-num.center span {
+    margin: 0 2.5px;
+}
+.c-red {
+    color: #e73f3f;
+}
+.digg{clear: both;color: #333333;font-family: Tahoma,Arial;font-size: 12px;padding: 15px 5px;line-height: 16px;text-align: center;}
+.digg .prev{background-color: #FFFFFF;border: 1px solid #CCCCCC;color: #333333;display: inline-block;margin: 0 4px 0 0;padding: 4px 8px;text-align: center;text-decoration: none;}
+.digg .current{background-color: #333333;border: 1px solid #333333;color: #FFFFFF;}
+.digg a,.digg span{
+    font-size: 100%;
+    line-height: 160%;
+    display: inline-block;
+    font-style: normal;
+    padding: 5px 12px;
+    border: 1px solid #e4e4e4;
+    margin: 0 10px 10px 0;
+}
+.digg a:hover{
+    border-color: #0785D4;
+    background: #079BF3;
+    color: #fff;}
+.cursor{cursor: pointer;}
+.current{border:solid 1px #00b7ee;padding:2px;color:#fff;background-color:#00b7ee;}
+.brn{border-right: none !important;}

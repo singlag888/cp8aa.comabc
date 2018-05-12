@@ -1,0 +1,39 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <div class="newest_prize">
+        <foreach name="resultArray" item="resultInfo">
+            <a href="/{$resultInfo['categoryInfo']['url']}/">
+                <div class="lett_logo">
+                    <img src="{$resultInfo['categoryInfo']['image']}"><span>{$resultInfo['categoryInfo']['catname']}</span>
+                </div>
+                <div class="lett_time">
+                    <span>{$resultInfo['resultInfo']['expect']}期</span><span>{$resultInfo['resultInfo']['opentimestamp']|date='Y-m-d H:i:s',###}</span>
+                </div>
+                <div class="lett_sphere">
+                    <?php foreach(explode(',', $resultInfo['resultInfo']['opencode']) as $value){ ?>
+                    <li>{$value}</li>
+                    <?php } ?>
+                </div>
+                <s class="sanjiao"></s>
+            </a>
+        </foreach>
+    </div>
+
+    <foreach name="dataArray" item="dataItem">
+        <div class="gd_infos">
+            <div class="gd_infos_title">
+                <h1><a href="/{$dataItem['cateInfo']['url']}/{$dataItem['typeInfo']['pinyin']}/" title="{$dataItem['cateInfo']['catname']}{$dataItem['typeInfo']['title']}">{$dataItem['cateInfo']['catname']}{$dataItem['typeInfo']['title']}</a></h1>
+            </div>
+            <div class="gd_infos_li">
+                <foreach name="dataItem.data" item="item">
+                    <a href="/{$dataItem['cateInfo']['url']}/{$dataItem['typeInfo']['pinyin']}/{$item.id}.html" title="{$item.title}">
+                        <h2>{$item.title|_substr=25,'...'}</h2>
+                        <s></s>
+                        <time>{$item.inputtime|date="Y-m-d H:i:s",###}</time>
+                    </a>
+                </foreach>
+            </div>
+        </div>
+    </foreach>
+
+</block>

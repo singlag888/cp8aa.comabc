@@ -1,0 +1,44 @@
+<div class="bjui-pageContent">
+    <form action="__SELF__" id="j_custom_form" data-toggle="validate" data-alertmsg="false">
+        <input type="hidden" name="catid" value="{$catid}">
+        <div style="margin:15px auto 0; width:100%;">
+            <fieldset>
+                <legend>栏目设置</legend>
+                <!-- Tabs -->
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active"><a href="#tab_setting_1" role="tab" data-toggle="tab">基本选项</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane fade active in" id="tab_setting_1">
+                        <table class="table table-condensed table-hover" width="100%">
+                            <tbody>
+
+                                <tr>
+                                    <td>
+                                        <label for="c_title" class="control-label x85">名称：</label>
+                                        <input type="text" id="c_title" name="info[title]" value="{$Detail.title}" data-rule="required" size="15" class="required">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label for="c_pinyin" class="control-label x85">拼音：</label>
+                                        <input type="text" id="c_pinyin" name="info[pinyin]" value="{$Detail.pinyin}" size="15" class="required">
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        
+    </form>
+</div>
+<div class="bjui-pageFooter">
+    <ul>
+        <li><button type="button" class="btn-close" data-icon="close">取消</button></li>
+        <li><button type="submit" class="btn-default" data-icon="save">保存</button></li>
+    </ul>
+</div>

@@ -1,0 +1,21 @@
+<div style="width: 60%;float: left;">
+<input type="hidden" class="{$resultInfo['categoryInfo']['url']}nextExpect" value="{$resultInfo['timeInfo']['expect']}">
+    <div class="lott_draw_1l">
+        <span></span>
+        <span>{$resultInfo['resultInfo']['expect']}期</span>
+    </div>
+    <div class="lott_draw_sphere">
+        <?php foreach(explode(',', $resultInfo['resultInfo']['opencode']) as $value){ ?>
+        <li>{$value}</li>
+        <?php } ?>
+    </div>
+</div>
+<div style="width: 40%;float: right;">
+    <div class="lott_draw_1l">
+        <span>距下一期开奖时间</span>
+        <div class="djs djsbjsc" style="height: 1.25rem;margin: 0.7rem 0 0 0.75rem;">
+            <span>{$resultInfo['other']['min']}</span><em>分</em><span>{$resultInfo['other']['sec']}</span><em>秒</em>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <section class="dangqian_wz">
+        <span>当前位置：
+            <a href="/">首页</a>
+            &gt; <a href="/{$categoryInfo['url']}/">{$categoryInfo['catname']}</a>
+            &gt; <a id="urlmbx" href="/{$categoryInfo['url']}/{$typeInfo['pinyin']}/">{$typeInfo['title']}</a>
+        </span>
+    </section>
+    <section class="lottery_comtent info_comtent clearfix">
+        <aside class="info_comtent_left">
+            <div class="info_comtent_li">
+                <foreach name="list" item="item">
+                    <li>
+                        <i></i>
+                        <a href="/{$categoryInfo['url']}/{$typeInfo['pinyin']}/{$item.id}.html" title="{$item.title}">{$item.title|_substr=25,'...'}</a>
+                        <time>{$item.inputtime|date="Y-m-d",###}</time>
+                    </li>
+                </foreach>
+            </div>
+            <div class="digg">
+                {$page}
+            </div>
+        </aside>
+        <aside class="lottery_comtent_right">
+            <foreach name="typeData" item="dataItem">
+                <notempty name="dataItem.data">
+                <div class="lottcom_list">
+                    <div class="lottcom_darw_title">
+                        <h2>{$dataItem.title}</h2>
+                        <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/">更多&gt;&gt;</a>
+                    </div>
+                    <ul>
+                        <foreach name="dataItem.data" item="item">
+                            <li>
+                                <i></i>
+                                <a href="/{$categoryInfo['url']}/{$dataItem['pinyin']}/{$item.id}.html" title="{$item.title}">{$item.title|_substr=25,'...'}</a>
+                                <time>{$item.inputtime|date="Y-m-d",###}</time>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+                </notempty>
+            </foreach>
+        </aside>
+    </section>
+</block>

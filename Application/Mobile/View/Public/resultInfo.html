@@ -1,0 +1,77 @@
+<div class="lott_draw l_txt">
+    <div style="width: 60%;float: left;">
+	<input type="hidden" class="{$resultInfo['categoryInfo']['url']}nextExpect" value="{$resultInfo['timeInfo']['expect']}">
+        <div class="lott_draw_1l">
+            <span>{$resultInfo['categoryInfo']['catname']}</span>
+            <span>{$resultInfo['resultInfo']['expect']}期</span>
+        </div>
+        <div class="lott_draw_sphere">
+            <?php foreach(explode(',', $resultInfo['resultInfo']['opencode']) as $value){ ?>
+            <li>{$value}</li>
+            <?php } ?>
+        </div>
+    </div>
+    <div style="width: 40%;float: right;">
+        <div class="lott_draw_1l">
+            <span>距下一期开奖时间</span>
+            <div class="djs djsbjsc" style="height: 1.25rem;margin: 0.7rem 0 0 0.75rem;">
+                <span>{$resultInfo['other']['min']}</span><em>分</em><span>{$resultInfo['other']['sec']}</span><em>秒</em>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+    var intDiff = parseInt({$resultInfo['other']['remainTime']});//倒计时总秒数量
+    var remainTime = {$resultInfo['remainTime']};
+    function timer(intDiff){
+        var interval = window.setInterval(function(){
+            var minute=0,
+                    second=0;//时间默认值
+            if(intDiff > 0){
+                minute = Math.floor(intDiff / 60);
+                second = Math.floor(intDiff) - (minute * 60);
+            }
+            if (minute <= 9) minute = '0' + minute;
+            if (second <= 9) second = '0' + second;
+            $(".djs").empty();
+            $(".djs").html("<span>"+minute+"</span><em>分</em><span>"+second+"</span><em>秒</em>");
+            intDiff--;
+            if(0 == intDiff){
+                var {$resultInfo['categoryInfo']['url']}nextExpect = $(".{$resultInfo['categoryInfo']['url']}nextExpect").val();
+                resultTime({$resultInfo['categoryInfo']['url']}nextExpect);
+                window.clearInterval(interval);
+            }
+        }, 1000);
+    }
+
+    function resultTime({$resultInfo['categoryInfo']['url']}nextExpect){
+        var resultTimeInterval = window.setTimeout(function(){
+            $.ajax({
+                'url' : "{:U('Ajax/resultInfo')}",
+                'type' : 'POST',
+                'dataType': "json",
+                'data' : {
+                    'id' : {$resultInfo['categoryInfo']['catid']},
+                    'next' : {$resultInfo['categoryInfo']['url']}nextExpect
+                },
+                success : function(data){
+                    if(1 == data.msgCode){
+                        $(".l_txt").empty();
+                        $(".l_txt").html(data.html);
+                        window.clearInterval(resultTimeInterval);
+                        timer(data.remainTime);
+                    }else{
+                        $('.djs').empty();
+                        $('.djs').html("<p style='height: 1.25rem;line-height:1.25rem;text-align: center;font-size: 24px;font-weight: 700;color: #fff;background: #e73f3f;border-radius: 3px;'>开奖中...</p>");
+                        resultTime({$resultInfo['categoryInfo']['url']}nextExpect);
+                    }
+                }
+            });
+            return false;
+        }, 2000);
+    }
+    $(function(){
+        timer(intDiff);
+    });
+</script>

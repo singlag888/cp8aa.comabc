@@ -1,0 +1,1 @@
+require(["global"],function(t){$(".banner").length>0&&require(["slider"],function(t){$(".banner").slide({mainCell:".img ul",titCell:".hd ul",autoPage:!0,effect:"fold",autoPlay:!0,interTime:3500})}),$(".lottery-news").length>0&&app.tab(".lottery-news .tab a",".lottery-news .box","click"),$(".lottery-list li").each(function(){app.get_lottery($(this).attr("id"))})});

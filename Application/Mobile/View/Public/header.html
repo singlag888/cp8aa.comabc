@@ -1,0 +1,46 @@
+<body>
+<header class="gd_header">
+    <div class="logo">
+        <a href="/">
+            <img src="__PUBLIC__/images/logo.jpg">
+        </a>
+    </div>
+</header>
+<notempty name="daoHangList">
+<div class="gd_infos" style="margin-bottom:1erm;">
+    <div class="gd_infos_title">
+		<h1>导航链接</h1>
+    </div>
+	<div class="gd_infos_li">
+		<ul class="m_ul">
+		<foreach name="daoHangList" item="item">
+		<li>
+			<a href="{$item.url}" target="_blank"  rel="nofollow">
+                <span class="red">{$item.title}</span>
+            </a> 
+		</li>
+        </foreach>
+		</ul>
+	</div>
+</div>
+<p style="display:block;clear:both;"></p>
+</notempty>
+<notempty name="beiYongDaoHangList">
+<div class="gd_infos" style="margin-bottom:1erm;">
+    <div class="gd_infos_title">
+		<h1>备用导航链接</h1>
+    </div>
+	<div class="gd_infos_li">
+		<ul class="m_ul">
+		<foreach name="beiYongDaoHangList" item="item">
+		<li>
+			<a href="{$item.url}" target="_blank"  rel="nofollow">
+                <span class="red">{$item.title}</span>
+            </a> 
+		</li>
+        </foreach>
+		</ul>
+	</div>
+</div>
+<p style="display:block;clear:both;"></p>
+</notempty>

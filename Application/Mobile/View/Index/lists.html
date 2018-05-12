@@ -1,0 +1,29 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <div class="infos_list">
+        <div class="infos_list_title">
+            <a href="/{$categoryInfo['url']}/">历史开奖</a>
+            <a href="/{$categoryInfo['url']}/zjxw/" <eq name="typeInfo.pinyin" value="zjxw">class="active"</eq> >中奖新闻</a>
+            <a href="/{$categoryInfo['url']}/zjyc/" <eq name="typeInfo.pinyin" value="zjyc">class="active"</eq> >专家预测</a>
+            <a href="/{$categoryInfo['url']}/tzjq/" <eq name="typeInfo.pinyin" value="tzjq">class="active"</eq> >投注技巧</a>
+        </div>
+        <div class="gd_infos_li">
+
+            <foreach name="list" item="item">
+                <a href="/{$categoryInfo['url']}/{$typeInfo['pinyin']}/{$item.id}.html" title="{$item.title}"><h2>
+                    {$item.title|_substr=25,'...'}</h2>
+                    <s></s>
+                    <time>{$item.inputtime|date="Y-m-d",###}</time>
+                </a>
+
+            </foreach>
+        </div>
+        <div class="zx_text_yeshu">
+            <ul>
+                <span>
+                    {$page}
+                </span>
+            </ul>
+        </div>
+    </div>
+</block>

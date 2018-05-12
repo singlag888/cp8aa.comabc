@@ -1,0 +1,27 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <include file="Public/resultInfo"/>
+    <div class="draw_table">
+        <div class="draw_table_title">
+            <a href="/{$categoryInfo['url']}/">历史开奖</a>
+            <a href="/{$categoryInfo['url']}/zjxw/" <eq name="typeInfo.pinyin" value="zjxw">class="active"</eq> >中奖新闻</a>
+            <a href="/{$categoryInfo['url']}/zjyc/" <eq name="typeInfo.pinyin" value="zjyc">class="active"</eq> >专家预测</a>
+            <a href="/{$categoryInfo['url']}/tzjq/" <eq name="typeInfo.pinyin" value="tzjq">class="active"</eq> >投注技巧</a>
+        </div>
+    </div>
+    <div class="lott_history">
+        <foreach name="resultList" item="item">
+            <a> <span>第{$item.expect}期</span> <strong>{$item.opentimestamp|date="H:i:s",###}</strong>
+                <div class="history-ball">
+
+                    <ul>
+                        <?php foreach(explode(',', $item['opencode']) as $value){ ?>
+                        <li class="history-red">{$value}</li>
+                        <?php } ?>
+                    </ul>
+                </div>
+                <s></s>
+            </a>
+        </foreach>
+    </div>
+</block>

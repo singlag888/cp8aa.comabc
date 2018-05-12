@@ -1,0 +1,21 @@
+<td>
+    <span class="table_name ">
+        <a href="/{$resultInfo['categoryInfo']['url']}/">{$resultInfo['categoryInfo']['catname']}</a>
+    </span>
+</td>
+<td>
+    <span class="table_hao">
+        {$resultInfo['resultInfo']['expect']}
+    </span>
+</td>
+<td align="center">
+    <div class="boll_box" style="padding-left: 10px;">
+        <?php foreach(explode(',', $resultInfo['resultInfo']['opencode']) as $value){ ?>
+        <li class="boll_red">{$value}</li>
+        <?php } ?>
+    </div>
+</td>
+<td class="djs{$resultInfo['categoryInfo']['url']}">
+    <span style="color: #ff0000" >{$resultInfo['other']['min']}</span>分
+    <span style="color: #ff0000" >{$resultInfo['other']['sec']}</span>秒
+</td>

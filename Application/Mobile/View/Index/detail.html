@@ -1,0 +1,31 @@
+<extend name="Basic/common"/>
+<block name="main">
+    <!--<div class="lott_nav">-->
+        <!--<span>热彩:</span>-->
+        <!--<a href="/ssq/">双色球</a>-->
+        <!--<a href="/fc3d/">3D</a>-->
+        <!--<a href="/dlt/">大乐透</a>-->
+        <!--<a href="/qxc/">七星彩</a>-->
+        <!--<a href="/qlc/">七乐彩</a>-->
+        <!--<a href="/ssq/">双色球</a>-->
+        <!--<a href="/fc3d/">3D</a>-->
+        <!--<a href="/dlt/">大乐透</a>-->
+        <!--<a href="/qxc/">七星彩</a>-->
+        <!--<a href="/qlc/">七乐彩</a>-->
+    <!--</div>-->
+    <div class="lottery-text">
+        <div class="lottery-text-center">
+            <div class="infos_list_title">
+                <a href="/{$categoryInfo['url']}/">历史开奖</a>
+                <a href="/{$categoryInfo['url']}/zjxw/" <eq name="typeInfo.pinyin" value="zjxw">class="active"</eq> >中奖新闻</a>
+                <a href="/{$categoryInfo['url']}/zjyc/" <eq name="typeInfo.pinyin" value="zjyc">class="active"</eq> >专家预测</a>
+                <a href="/{$categoryInfo['url']}/tzjq/" <eq name="typeInfo.pinyin" value="tzjq">class="active"</eq> >投注技巧</a>
+            </div>
+            <h5>{$Detail.title}</h5>
+            <span>{$Detail.inputtime|date="Y-m-d H:i:s",###} 来源：网络</span>
+            <div class="article_text_con">
+                {$Detail.content}
+            </div>
+        </div>
+    </div>
+</block>

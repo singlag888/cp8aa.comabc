@@ -1,0 +1,73 @@
+<div class="footer" style="border: none;">
+    <notempty name="linkList">
+        <div id="nav" class="l_nav" style="margin-top: 10px;">
+            <div class="tab clearfix">
+                <h6>友情链接</h6>
+            </div>
+            <foreach name="linkList" item="item">
+                <p class="nav_p">
+                    <a href="{$item.url}" target="_blank">
+                        <span class="red">{$item.title}</span>
+                    </a>
+                </p>
+            </foreach>
+            </p>
+        </div>
+    </notempty>
+<div style="display:none">
+<script src="https://s11.cnzz.com/z_stat.php?id=3956453&web_id=3956453" language="JavaScript"></script>
+</div>
+    <div class="copyright"> 
+        <p><span>2018 &copy;彩票吧www.cp8aa.com 彩票开奖网 </span><span style="color:#f13131;">温馨提醒：购买彩票有风险，在线投注须谨慎 </span> 不向未满18周岁的青少年出售彩票</p>
+    </div>
+
+</div>
+<script type="text/javascript">
+    <notempty name="resultArray">
+        <foreach name="resultArray" item="resultInfo">
+
+    var intDiff{$resultInfo['categoryInfo']['url']} = parseInt({$resultInfo['other']['remainTime']});//倒计时总秒数量
+    var remainTime{$resultInfo['categoryInfo']['url']} = parseInt({$resultInfo['remainTime']});
+    function timer{$resultInfo['categoryInfo']['url']}(intDiff{$resultInfo['categoryInfo']['url']}){
+        var interval{$resultInfo['categoryInfo']['url']} = window.setInterval(function(){
+            var day{$resultInfo['categoryInfo']['url']}=0,
+                    hour{$resultInfo['categoryInfo']['url']}=0,
+                    minute{$resultInfo['categoryInfo']['url']}=0,
+                    second{$resultInfo['categoryInfo']['url']}=0;//时间默认值
+            if(intDiff{$resultInfo['categoryInfo']['url']} > 0){
+                day{$resultInfo['categoryInfo']['url']} = Math.floor(intDiff{$resultInfo['categoryInfo']['url']} / (60 * 60 * 24));
+                hour{$resultInfo['categoryInfo']['url']} = Math.floor(intDiff{$resultInfo['categoryInfo']['url']} / (60 * 60)) - (day{$resultInfo['categoryInfo']['url']} * 24);
+                minute{$resultInfo['categoryInfo']['url']} = Math.floor(intDiff{$resultInfo['categoryInfo']['url']} / 60) - (day{$resultInfo['categoryInfo']['url']} * 24 * 60) - (hour{$resultInfo['categoryInfo']['url']} * 60);
+                second{$resultInfo['categoryInfo']['url']} = Math.floor(intDiff{$resultInfo['categoryInfo']['url']}) - (day{$resultInfo['categoryInfo']['url']} * 24 * 60 * 60) - (hour{$resultInfo['categoryInfo']['url']} * 60 * 60) - (minute{$resultInfo['categoryInfo']['url']} * 60);
+            }
+            if (minute{$resultInfo['categoryInfo']['url']} <= 9) minute{$resultInfo['categoryInfo']['url']} = '0' + minute{$resultInfo['categoryInfo']['url']};
+            if (second{$resultInfo['categoryInfo']['url']} <= 9) second{$resultInfo['categoryInfo']['url']} = '0' + second{$resultInfo['categoryInfo']['url']};
+            $(".djs{$resultInfo['categoryInfo']['url']}").empty();
+            $(".djs{$resultInfo['categoryInfo']['url']}").html("<span style='color: #ff0000'>"+minute{$resultInfo['categoryInfo']['url']}+"</span><em>分</em><span style='color: #ff0000'>"+second{$resultInfo['categoryInfo']['url']}+"</span><em>秒</em>");
+            intDiff{$resultInfo['categoryInfo']['url']}--;
+            if(0 == intDiff{$resultInfo['categoryInfo']['url']}){
+                setTimeout(function(){
+                    $.ajax({
+                        'url' : "{:U('Ajax/result')}",
+                        'type' : 'POST',
+                        'data' : {
+                            'id' : {$resultInfo['categoryInfo']['catid']}
+                        },
+                        success : function(data){
+                            //$(".{$resultInfo['categoryInfo']['url']}").empty();
+                            $(".{$resultInfo['categoryInfo']['url']}").html(data);
+                            window.clearInterval(interval{$resultInfo['categoryInfo']['url']});
+                            timer{$resultInfo['categoryInfo']['url']}(remainTime{$resultInfo['categoryInfo']['url']});
+                        }
+                    });
+                    return false;
+                }, 2000);
+            }
+        }, 1000);
+    }
+    $(function(){
+        timer{$resultInfo['categoryInfo']['url']}(intDiff{$resultInfo['categoryInfo']['url']});
+    });
+    </foreach>
+    </notempty>
+</script>

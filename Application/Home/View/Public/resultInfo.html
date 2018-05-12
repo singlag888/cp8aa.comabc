@@ -1,0 +1,94 @@
+<section class="lottery-card">
+    <div class="img">
+        <span><img src="{$resultInfo['categoryInfo']['image']}" alt="{$resultInfo['categoryInfo']['catname']}" style="width:80px;height:80px;"></span>
+        <p>{$resultInfo['categoryInfo']['catname']}</p>
+        <a href="/{$resultInfo['categoryInfo']['url']}/">历史开奖</a>
+    </div>
+    <div class="{$resultInfo['categoryInfo']['url']}">
+        <input type="hidden" class="{$resultInfo['categoryInfo']['url']}nextExpect" value="{$resultInfo['timeInfo']['expect']}">
+        <div class="txt">
+            <p><img src="__PUBLIC__/images/star.png" class="star">第<span style="color: red;font-weight: bold;">{$resultInfo['resultInfo']['expect']}</span>期开奖号码</p>
+            <div class="cai-num pk10-num">
+                <?php foreach(explode(',', $resultInfo['resultInfo']['opencode']) as $value){ ?>
+                <span class="n{$value}" data-num="{$value}">{$value}</span>
+                <?php } ?>
+            </div>
+            <div class="clearfix">
+                <a href="/{$resultInfo['categoryInfo']['url']}/">历史开奖</a>
+                <foreach name="types" item="typeItem">
+                    <a href="/{$resultInfo['categoryInfo']['url']}/{$typeItem.pinyin}">{$typeItem.title}</a>
+                </foreach>
+            </div>
+        </div>
+        <div class="rule clearfix">
+            <div class="open-time">
+                <p>距下一期开奖时间<br>还剩：</p>
+                <div class="djs">
+                    <span>{$resultInfo['other']['min']}</span><em>分</em><span>{$resultInfo['other']['sec']}</span><em>秒</em>
+                </div>
+                <p>已开<span class="open">{$resultInfo['other']['resultCount']}</span>期，还有<span class="left"><?php echo $resultInfo['other']['timeCount']-$resultInfo['other']['resultCount']; ?></span>期</p>
+            </div>
+            <div class="open-video">
+                <img src="{$resultInfo['categoryInfo']['zhiboimage']}" alt="{$resultInfo['categoryInfo']['catname']}开奖直播" width="110" height="110">
+                <span>开奖直播</span>
+                <a href="/{$resultInfo['categoryInfo']['url']}/kjzb/" class="play">
+                    <img src="__PUBLIC__/images/play.png" alt="播放">
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    var intDiff = parseInt({$resultInfo['other']['remainTime']});//倒计时总秒数量
+    var remainTime = {$resultInfo['remainTime']};
+    function timer(intDiff){
+        var interval = window.setInterval(function(){
+            var minute=0,
+                    second=0;//时间默认值
+            if(intDiff > 0){
+                minute = Math.floor(intDiff / 60);
+                second = Math.floor(intDiff) - (minute * 60);
+            }
+            if (minute <= 9) minute = '0' + minute;
+            if (second <= 9) second = '0' + second;
+            $(".djs").empty();
+            $(".djs").html("<span>"+minute+"</span><em>分</em><span>"+second+"</span><em>秒</em>");
+            intDiff--;
+            if(0 == intDiff){
+                var {$resultInfo['categoryInfo']['url']}nextExpect = $(".{$resultInfo['categoryInfo']['url']}nextExpect").val();
+                resultTime({$resultInfo['categoryInfo']['url']}nextExpect);
+                window.clearInterval(interval);
+            }
+        }, 1000);
+    }
+
+    function resultTime({$resultInfo['categoryInfo']['url']}nextExpect){
+        var resultTimeInterval = window.setTimeout(function(){
+            $.ajax({
+                'url' : "{:U('Ajax/resultInfo')}",
+                'type' : 'POST',
+                'dataType': "json",
+                'data' : {
+                    'id' : {$resultInfo['categoryInfo']['catid']},
+                    'next' : {$resultInfo['categoryInfo']['url']}nextExpect
+                },
+                success : function(data){
+                    if(1 == data.msgCode){
+                        $(".l_txt").empty();
+                        $(".l_txt").html(data.html);
+                        window.clearInterval(resultTimeInterval);
+                        timer(data.remainTime);
+                    }else{
+                        $('.djs').empty();
+                        $('.djs').html("<p style='height: 50px;text-align: center;font-size: 24px;font-weight: 700;color: #fff;background: #e73f3f;border-radius: 3px;'>开奖中...</p>");
+                        resultTime({$resultInfo['categoryInfo']['url']}nextExpect);
+                    }
+                }
+            });
+            return false;
+        }, 2000);
+    }
+    $(function(){
+        timer(intDiff);
+    });
+</script>

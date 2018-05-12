@@ -1,0 +1,49 @@
+<div class="docHead">
+    <div class="logo">
+        <a href="/"><img src="__PUBLIC__/images/logo.png" alt="logo" /></a>
+    </div>
+</div>
+<nav class="doc_nav_box">
+    <div class="doc_nav">
+        <a href="/" <?php if(empty($_GET['catpinyin'])) echo 'class="hover"'; ?> >首页</a>
+        <foreach name="categorys" item="item">
+            <a href="/{$item.url}/" <?php if($item['url'] == $_GET['catpinyin']) echo 'class="hover"'; ?>>{$item.catname}</a>
+        </foreach>
+    </div>
+</nav>
+<div style="margin-top: 10px;"></div>
+
+<!--
+<notemp0ty name="daoHangList">
+    <div class="l_nav" style="width: 967px;margin: 5px auto;">
+        <div class="tab clearfix">
+            <h6>导航链接</h6>
+        </div>
+        <foreach name="daoHangList" item="item">
+            <p class="nav_p" style="width: 165px;">
+
+                <a href="{$item.url}" target="_blank"  rel="nofollow">
+                    <span class="red">{$item.title}</span>
+                </a>
+            </p>
+        </foreach>
+        </p>
+    </div>
+</notemp0ty>
+<notempty name="beiYongDaoHangList">
+    <div class="l_nav" style="width: 967px;margin: 5px auto;">
+        <div class="tab clearfix">
+            <h6>备用导航网址</h6>
+        </div>
+        <foreach name="beiYongDaoHangList" item="item">
+            <p class="nav_p" style="width: 165px;">
+                <a href="{$item.url}" target="_blank"  rel="nofollow">
+                    <span class="red">{$item.title}</span>
+                </a>
+            </p>
+        </foreach>
+        </p>
+    </div>
+</notempty>
+
+-->
